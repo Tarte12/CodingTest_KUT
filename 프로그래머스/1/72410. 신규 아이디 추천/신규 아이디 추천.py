@@ -2,15 +2,11 @@ def solution(new_id):
     level2 = []
     isTrue = set("abcdefghijklmnopqrstuvwxyz0123456789-_.")
     level3 = []
-    level4 = []
-    level5 = []
-    level6 = []
-    level7 = []
     #1단계: 대문자 -> 소문자
-    level1 = new_id.lower()
+    new_id = new_id.lower()
     #2단계: 소문자, 숫자, 빼기(-), 밑줄(_), 마침표(.) 아닌 문자 제거
     # for문으로 돌면서 new_id.pop 불가능 (문자열 불변)
-    for word in level1:
+    for word in new_id:
         if word in isTrue:
             level2.append(word)
         # isdigit/isdecimal/isnumeric의 속도 차이는 없는가?
@@ -29,30 +25,24 @@ def solution(new_id):
             else:
                 level3.append(word)
     #4단계: 앞뒤 마침표 제거
-    level4 = level3
+    new_id = level3
     if level3 and level3[0] == '.':
         # level3이 비면 false로 넘어가 버림
-        level4 = level3[1:]
+        new_id = level3[1:]
     if level3 and level3[-1] == '.':
-        level4 = level4[:-1]
+        new_id = new_id[:-1]
     #5단계: 빈 문자열일 경우 a 대입
-    if len(level4) == 0:
-        level5.append('a')
-    else:
-        level5 = level4
+    if len(new_id) == 0:
+        new_id.append('a')
     #6단계: 길이 15자 이상이면 15자까지만 출력
-    level6 = level5
-    if len(level6) > 15:
-        level6 = level6[:15]
-        if level6[-1] == '.':
-            level6 = level6[:-1]
+    if len(new_id) > 15:
+        new_id = new_id[:15]
+        if new_id[-1] == '.':
+            new_id = new_id[:-1]
     #7단계: 길이가 2자 이하면 3될 때까지 반복
-    if len(level6) < 3:
-        num = level6[-1]
-        level7 = level6
-        while len(level7) < 3:
-            level7.append(num)
-    else:
-        level7 = level6
-    level7 = "".join(level7)
-    return level7
+    if len(new_id) < 3:
+        num = new_id[-1]
+        while len(new_id) < 3:
+            new_id.append(num)
+    new_id = "".join(new_id)
+    return new_id
