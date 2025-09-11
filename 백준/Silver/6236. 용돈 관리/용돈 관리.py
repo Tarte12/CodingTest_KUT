@@ -8,10 +8,10 @@ answer = 0 #정답
 
 while lt <= rt: #K(mid)값 구하는 while문
     
-    if m == 1:
+    if m == 1: #1번밖에 못 뽑으니까 N일치를 1번 뽑아서 모두 해결해야 하므로 sum(money)
         print(rt)
         exit()
-    if m >= n:
+    if m >= n: #인출을 매일 해도 상관 없음 -> 매일 wallet = K로 초기화 => K = max(money)만 만족하면 됨
         print(lt)
         exit()
 
@@ -31,4 +31,5 @@ while lt <= rt: #K(mid)값 구하는 while문
     else:
         answer = mid
         rt = mid - 1
+
 print(answer)
