@@ -1,0 +1,11 @@
+n = int(input())
+s = input()
+res = []
+
+for c in s:
+	if c.isupper():
+		res.append(c.lower())
+	else:
+		res.append(c.upper())
+
+print(''.join(res))
