@@ -1,0 +1,12 @@
+mod = 1000000007
+k = int(input())
+
+if k == 1:
+	print(0)
+elif k == 2:
+	print(1)
+else:
+	a, b = 0, 1
+	for _ in range(3, k+1):
+		a, b = b, (a + b) % mod
+	print(b)
