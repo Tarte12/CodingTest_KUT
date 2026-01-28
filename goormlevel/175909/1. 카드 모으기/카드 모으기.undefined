@@ -1,0 +1,23 @@
+n, m = map(int, input().split())
+kard_lst = []
+
+for _ in range(m):
+	num = int(input())
+	kard_lst.append(num)
+	
+kard = set()
+count = 0
+
+for i in kard_lst:
+	count += 1
+	if i not in kard:
+		kard.add(i)
+	if len(kard) == n:
+		break
+		
+if len(kard) < n:
+	print(-1)
+else:
+	print(count)
+		
+		
