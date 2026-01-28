@@ -1,0 +1,26 @@
+n = int(input())
+count = 0
+
+while n != 0:
+	if n >= 40:
+		money = n // 40
+		count += money
+		n -= money*40
+	elif n >= 20:
+		money = n // 20
+		count += money
+		n -= money*20
+	elif n >= 10:
+		money = n // 10
+		count += money
+		n -= money*10
+	elif n >= 5:
+		money = n // 5
+		count += money
+		n -= money*5
+	elif n >= 1:
+		money = n // 1
+		count += money
+		n -= money
+		
+print(count)
