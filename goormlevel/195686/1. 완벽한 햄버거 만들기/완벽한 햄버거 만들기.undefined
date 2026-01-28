@@ -1,0 +1,25 @@
+n = int(input())
+k = list(map(int, input().split()))
+
+# 최댓값의 인덱스 찾기
+max_value = max(k)
+max_idx = k.index(max_value)
+
+# 왼쪽 부분 검사 (증가하거나 같아야 함)
+is_valid = True
+for i in range(max_idx):
+    if k[i] > k[i + 1]:
+        is_valid = False
+        break
+
+# 오른쪽 부분 검사 (감소하거나 같아야 함)
+if is_valid:
+    for i in range(max_idx, n - 1):
+        if k[i] < k[i + 1]:
+            is_valid = False
+            break
+
+if is_valid:
+    print(sum(k))  # 모든 재료의 맛의 합
+else:
+    print(0)
