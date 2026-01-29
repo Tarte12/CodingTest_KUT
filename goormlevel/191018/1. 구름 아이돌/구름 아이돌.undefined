@@ -1,0 +1,11 @@
+n = input()
+s = list(map(int, input().split()))
+
+arr =[(score, idx) for idx, score in enumerate(s)]
+arr.sort(reverse=True)
+res = []
+
+for i in range(3):
+	res.append(arr[i][1]+1)
+
+print(*res)
