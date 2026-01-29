@@ -1,0 +1,10 @@
+n = int(input())
+m = []
+
+for i in range(1, n+1):
+	w, v = map(int, input().split())
+	res = w / v
+	m.append((res, w, -i))
+
+m.sort(reverse=True)
+print(-m[0][2])
