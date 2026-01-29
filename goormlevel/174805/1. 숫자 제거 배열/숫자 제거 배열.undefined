@@ -1,0 +1,10 @@
+n, k = input().split()
+num = list(input().split())
+res = []
+
+for i in num:
+	if k not in i:
+		res.append(i)
+
+print(len(res))
+		
