@@ -1,0 +1,31 @@
+s = input()
+dic = {
+	'(':')',
+	'[':']',
+	'{':'}'
+}
+stack = []
+flag = True
+
+for x in s:
+	#여는 괄호
+	if x in dic:
+		stack.append(x)
+	#닫는 괄호
+	else:
+		#빈 스택일 때
+		if not stack:
+			flag = False
+			break
+		open = stack.pop()
+		if dic[open] != x:
+			flag = False
+			
+if stack:
+	flag = False
+
+if flag:
+	print('YES')
+else:
+	print('NO')
+	
