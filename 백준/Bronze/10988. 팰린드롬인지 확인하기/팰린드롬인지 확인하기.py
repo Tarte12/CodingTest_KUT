@@ -1,6 +1,5 @@
-word = list(input())
-reverse_word = word[::-1]
-if word == reverse_word:
-    print(1)
-else:
+s = input()
+if s != s[::-1]:
     print(0)
+else:
+    print(1)
