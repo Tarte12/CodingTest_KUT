@@ -1,4 +1,4 @@
-# [Gold I] 스도미노쿠 - 4574 
+# [Gold I] 스도미노쿠 - 4574 (복습 필요)
 
 [문제 링크](https://www.acmicpc.net/problem/4574) 
 
